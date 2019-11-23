@@ -1,22 +1,20 @@
 #include "UserProcessing.h"
 #include <iostream>
 
-UserProcessing::UserProcessing()
+
+
+void UserProcessing::condition(Snake* mySnake)
 {
-	if (dir = checkKnock(dir))
+	checkKnock(dir);
+	if (dir!= UserProcessing::eDirection::STOP)
 	{
-		Snake *mySnake = new Snake(100, 100);
-		std::cout << 'u';
 		changePosition(dir, mySnake);
 	}
-std::cout << 'u';
 }
-
-
-
 
 void UserProcessing::changePosition(eDirection dir, Snake* mySnake)
 {
+	
 	switch (dir)
 	{
 	case LEFT:
@@ -26,30 +24,34 @@ void UserProcessing::changePosition(eDirection dir, Snake* mySnake)
 		mySnake->setX(mySnake->getX() + 1);
 		break;
 	case UP:
-		mySnake->setX(mySnake->getX() + 1);
+		mySnake->setY(mySnake->getY() - 1);
 		break;
 	case DOWN:
-		mySnake->setX(mySnake->getX() + 1);
+		mySnake->setY(mySnake->getY() + 1);
 		break;
 	}
 }
 
-UserProcessing::eDirection checkKnock(UserProcessing::eDirection dir)
+void UserProcessing::checkKnock(UserProcessing::eDirection &dir)
 {
 	if (_kbhit())
 	{
 		switch (_getch())
-		{
+		{ 
 		case 'a':
-			return UserProcessing::eDirection::LEFT;
+			dir = UserProcessing::eDirection::LEFT;
+			break;
 		case 'd':
-			return UserProcessing::eDirection::RIGHT;
+			dir =  UserProcessing::eDirection::RIGHT;
+			break;
 		case 'w':
-			return UserProcessing::eDirection::UP;
+			dir =  UserProcessing::eDirection::UP;
+			break;
 		case 's':
-			return UserProcessing::eDirection::DOWN;
+			dir = UserProcessing::eDirection::DOWN;
+			break;
 		case 'x':
-			return UserProcessing::eDirection::STOP;
+			dir = UserProcessing::eDirection::STOP;
 		}
 	}
 	

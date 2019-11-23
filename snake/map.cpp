@@ -9,12 +9,11 @@ protected:
 public:
 	map()
 	{
-		width = 200;
-		height = 300;
+		width = 20;
+		height = 20;
 		randomGeneratorOfFruits();
 		score = 0;
 	}
-	virtual void draw() = 0;
 	virtual void indicatedPoint(int x, int y) = 0;
 	virtual bool checkSnake(int x, int y) = 0;
 	virtual int getWidth() = 0;

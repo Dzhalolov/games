@@ -4,15 +4,12 @@
 
 #include <iostream>
 #include <windows.h>
-#include <math.h>
-#include <time.h>
 #include <conio.h>
 #include "map.cpp"
-
+#include "mapBig.h"
 class Snake
 {
 	friend class mapBig;
-	friend class map;
 //friend Map I think it's make sense
 	int x, y;
 	int nTail;

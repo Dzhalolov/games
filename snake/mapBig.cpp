@@ -1,10 +1,9 @@
 #include "mapBig.h"
-
-void mapBig::draw()
+void mapBig::draw(Snake& mySnake)
 {
-	Snake mySnake(width, height);
+	
 	system("cls");
-	for (int i = 0; i < width + 1; i++)
+	for (int i = 0; i < width; i++)
 		std::cout << "#";
 	std::cout << std::endl;
 	for (int i = 0; i < height; i++)
@@ -35,12 +34,14 @@ void mapBig::draw()
 		std::cout << std::endl;
 	}
 
-	for (int i = 0; i < width + 1; i++)
+	for (int i = 0; i < width; i++)
 		std::cout << "#";
 	std::cout << std::endl;
 	std::cout << "Score: " << score;
+	UserProcessing::instance().condition(&mySnake); 
 }
-void mapBig::returnBounds(Snake * mySnake)
+
+void mapBig:: returnBounds(Snake* mySnake)
 {
 	if (mySnake->getX() >= width - 1)
 		mySnake->setX(0);
@@ -65,8 +66,9 @@ bool mapBig::checkSnake(int x, int y)
 	return false;
 }
 
-mapBig::mapBig(int width, int height)
+mapBig::mapBig()
 {
+
 }
 
 void mapBig::randomGeneratorOfFruits()

@@ -1,4 +1,2 @@
-﻿  snake.cpp
-C:\Users\dzhal\source\repos\snake\snake\snake.cpp(7,18): warning C4838:  преобразование из "int" в "SHORT" требует сужающего преобразования
-C:\Users\dzhal\source\repos\snake\snake\snake.cpp(7,21): warning C4838:  преобразование из "int" в "SHORT" требует сужающего преобразования
+﻿  UserProcessing.cpp
   snake.vcxproj -> C:\Users\dzhal\source\repos\snake\Debug\snake.exe

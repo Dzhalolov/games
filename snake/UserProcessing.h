@@ -4,18 +4,27 @@
 
 #include <conio.h>
 #include "Snake.h"
+class Snake;
 class UserProcessing
 {
 	enum eDirection {STOP = 0, LEFT, RIGHT, UP, DOWN};
 	eDirection dir = STOP;//check how does it work
 
 public:
-	UserProcessing();
-	friend eDirection checkKnock(eDirection dir);
-
+	/*if (dir = checkKnock(dir))
+	{
+		Snake* mySnake = new Snake(100, 100);
+		changePosition(dir, mySnake);
+	}*/
+	static UserProcessing& instance()
+	{
+		static UserProcessing inst;
+		return inst;
+	}
 public:
 	void changePosition(eDirection dir, Snake* mySnake);
-
+	void checkKnock(UserProcessing::eDirection& dir);
+	void condition(Snake* mySnake);
 };
 #endif // !_USERPROCESSING_H_
 

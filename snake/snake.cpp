@@ -1,5 +1,4 @@
 ﻿#include "Snake.h"
-#include "UserProcessing.h"
 
 void Snake::goToXY(int x, int y)
 {
@@ -122,17 +121,5 @@ Snake::~Snake()
 {
 }
 
-int main()
-{
-	//goToXY(1, 1);
-	//std::cout << "Hello World!\n";
-	//UserProcessing userProcessing;
-	Snake snake(100, 100);
-	std::cout << snake.getX();
-	snake.setX(snake.getX() + 1);
-	std::cout << snake.getX();
-		//goToXY(5, 1);
-	//std::cout << "Hello World!\n";
-	return 0;
-}
+
 
