@@ -17,9 +17,11 @@ class Snake
 	int maxTail;
 	int* tailX;
 	int* tailY;
+	int time = 250;
 	void goToXY(int x, int y);//dublicate of funtion with class map, i'm not sure about function place:(
 public:
 	int getX();
+	int getTime();
 	int getY();
 	int getNTail();
 	int getMaxTail();

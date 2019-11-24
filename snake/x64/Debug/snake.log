@@ -1,0 +1,4 @@
+﻿  mapBig.cpp
+C:\Users\dzhal\Рабочий стол\for git\games\snake\mapBig.cpp(64,18): warning C4838:  преобразование из "int" в "SHORT" требует сужающего преобразования
+C:\Users\dzhal\Рабочий стол\for git\games\snake\mapBig.cpp(64,21): warning C4838:  преобразование из "int" в "SHORT" требует сужающего преобразования
+  snake.vcxproj -> C:\Users\dzhal\Рабочий стол\for git\games\x64\Debug\snake.exe

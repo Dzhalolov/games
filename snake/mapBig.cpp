@@ -3,7 +3,7 @@ void mapBig::draw(Snake& mySnake)
 {
 	
 	system("cls");
-	for (int i = 0; i < width+1; i++)
+	for (int i = 0; i < width + 1; i++)
 		std::cout << "#";
 	std::cout << std::endl;
 	for (int i = 0; i < height; i++)
@@ -42,18 +42,19 @@ void mapBig::draw(Snake& mySnake)
 	UserProcessing::instance().condition(&mySnake);
 	returnBounds(&mySnake);
 	mySnake.checkTail(this);
+
 }
 
 void mapBig:: returnBounds(Snake* mySnake)
 {
-	if (mySnake->getX() >= width - 1)
+	if (mySnake->getX() >= width)
 		mySnake->setX(0);
 	else if (mySnake->getX() < 0)
-		mySnake->setX(width - 1);
+		mySnake->setX(width-2);
 	if (mySnake->getY() >= height)
 		mySnake->setY(0);
 	else if (mySnake->getY() < 0)
-		mySnake->setY(height - 2);
+		mySnake->setY(height);
 
 }
 

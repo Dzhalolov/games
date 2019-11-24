@@ -15,7 +15,9 @@ int main()
 	//Snake* mySnake = new Snake(firstMap->getWidth, firstMap->getHeight);
 	Snake* mySnake = new Snake(10, 10);
 	while (!mySnake->getGameOver())
+	{
+		Sleep(mySnake->getTime());
 		firstMap->draw(*mySnake);
-		
+	}
 	return 0;
 }

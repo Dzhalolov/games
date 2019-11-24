@@ -16,6 +16,11 @@ int Snake::getX()
 	return x;
 }
 
+int Snake::getTime()
+{
+	return time;
+}
+
 int Snake::getY()
 {
 	return y;
@@ -62,8 +67,8 @@ Snake::Snake(int width, int height)
 	maxTail = 100;
 	tailX = new int[maxTail];
 	tailY = new int[maxTail];
-	x = rand() % width - 1;
-	y = rand() % height - 1;
+	x = rand() % (width - 1);
+	y = rand() % (height - 1);
 	nTail = 0;
 
 }
@@ -109,8 +114,11 @@ void Snake::checkTail(map* myMap)
 	{
 		myMap->setScore(myMap->getScore() + 10);
 		myMap->setFruitX(rand() % myMap->getWidth() - 1);
-		myMap->setFruitX(rand() % myMap->getHeight() - 1);
+		myMap->setFruitY(rand() % myMap->getHeight() - 1);
 		nTail += 1;
+		
+		if (time)
+			time -= 30;
 	}
 	//std::cout << myMap;
 }
