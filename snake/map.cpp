@@ -29,6 +29,6 @@ public:
 	virtual void randomGeneratorOfFruits()
 	{
 		fruitX = rand() % width;
-		fruitX = rand() % height;
+		fruitY = rand() % height;
 	}
 };

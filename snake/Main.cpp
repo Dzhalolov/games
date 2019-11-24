@@ -14,7 +14,7 @@ int main()
 	mapBig* firstMap = new mapBig();
 	//Snake* mySnake = new Snake(firstMap->getWidth, firstMap->getHeight);
 	Snake* mySnake = new Snake(10, 10);
-	while (true)
+	while (!mySnake->getGameOver())
 		firstMap->draw(*mySnake);
 		
 	return 0;

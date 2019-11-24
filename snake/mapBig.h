@@ -24,6 +24,7 @@ public:
 	void indicatedPoint(int x, int y) override;
 	bool checkSnake(int x, int y) override;
 	mapBig();
+	~mapBig();
 	void randomGeneratorOfFruits() override;
 };
 #endif // !_MAPBIG_H_

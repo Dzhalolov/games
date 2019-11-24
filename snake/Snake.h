@@ -15,8 +15,8 @@ class Snake
 	int nTail;
 	bool gameOver;
 	int maxTail;
-	int* tailX = new int[maxTail];
-	int* tailY = new int[maxTail];
+	int* tailX;
+	int* tailY;
 	void goToXY(int x, int y);//dublicate of funtion with class map, i'm not sure about function place:(
 public:
 	int getX();
@@ -28,7 +28,6 @@ public:
 	void setY(int y);
 	void setNTail(int nTail);
 	void setMaxTail(int maxTail);
-	void setGameOver(int gameOver);
 	Snake(int, int);
 	void logic();
 	void startCondition();

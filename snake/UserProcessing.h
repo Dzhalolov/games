@@ -9,7 +9,11 @@ class UserProcessing
 {
 	enum eDirection {STOP = 0, LEFT, RIGHT, UP, DOWN};
 	eDirection dir = STOP;//check how does it work
-
+	UserProcessing() {}                               // Private constructor
+	~UserProcessing() {}
+	UserProcessing(const UserProcessing&);                 // Prevent copy-construction
+	UserProcessing& operator=(const UserProcessing&);
+//	~UserProcessing();
 public:
 	/*if (dir = checkKnock(dir))
 	{

@@ -33,7 +33,7 @@ int Snake::getMaxTail()
 
 bool Snake::getGameOver()
 {
-	return true;
+	return gameOver;
 }
 
 void Snake::setX(int x)
@@ -56,15 +56,14 @@ void Snake::setMaxTail(int maxTail)
 	this->maxTail = maxTail;
 }
 
-void Snake::setGameOver(int gameOver)
-{
-	this->gameOver = gameOver;
-}
-
 Snake::Snake(int width, int height)
 {
-	x = rand() % width;
-	y = rand() % height;
+	gameOver = false;
+	maxTail = 100;
+	tailX = new int[maxTail];
+	tailY = new int[maxTail];
+	x = rand() % width - 1;
+	y = rand() % height - 1;
 	nTail = 0;
 
 }
@@ -109,16 +108,18 @@ void Snake::checkTail(map* myMap)
 	if (x == myMap->getFruitX() && y == myMap->getFruitY())
 	{
 		myMap->setScore(myMap->getScore() + 10);
-		myMap->setFruitX(rand() % myMap->getWidth());
-		myMap->setFruitX(rand() % myMap->getHeight());
+		myMap->setFruitX(rand() % myMap->getWidth() - 1);
+		myMap->setFruitX(rand() % myMap->getHeight() - 1);
 		nTail += 1;
 	}
+	//std::cout << myMap;
 }
 
 
 
 Snake::~Snake()
 {
+	delete [] tailX, tailY;
 }
 
 

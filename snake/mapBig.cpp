@@ -3,7 +3,7 @@ void mapBig::draw(Snake& mySnake)
 {
 	
 	system("cls");
-	for (int i = 0; i < width; i++)
+	for (int i = 0; i < width+1; i++)
 		std::cout << "#";
 	std::cout << std::endl;
 	for (int i = 0; i < height; i++)
@@ -12,7 +12,7 @@ void mapBig::draw(Snake& mySnake)
 		{
 			if (j == 0 || j == width - 1)
 				std::cout << "#";
-			else if (i == mySnake.y && j == mySnake.x)
+			if (i == mySnake.y && j == mySnake.x)
 				std::cout << "0";
 			else if (i == fruitY && j == fruitX)
 				std::cout << "F";
@@ -34,11 +34,14 @@ void mapBig::draw(Snake& mySnake)
 		std::cout << std::endl;
 	}
 
-	for (int i = 0; i < width; i++)
+	for (int i = 0; i < width + 1; i++)
 		std::cout << "#";
 	std::cout << std::endl;
 	std::cout << "Score: " << score;
-	UserProcessing::instance().condition(&mySnake); 
+	mySnake.logic();
+	UserProcessing::instance().condition(&mySnake);
+	returnBounds(&mySnake);
+	mySnake.checkTail(this);
 }
 
 void mapBig:: returnBounds(Snake* mySnake)
